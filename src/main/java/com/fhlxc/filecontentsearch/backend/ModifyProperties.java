@@ -65,10 +65,4 @@ public class ModifyProperties {
         }
     }
     
-    public static void main(String ... args) throws IOException {
-        ModifyProperties modifyProperties = new ModifyProperties("ui.properties");
-        modifyProperties.init();
-        modifyProperties.list();
-    }
-    
 }
