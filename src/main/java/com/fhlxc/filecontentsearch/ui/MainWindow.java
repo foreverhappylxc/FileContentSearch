@@ -1,5 +1,6 @@
-package com.fhlxc.filecontentsearch;
+package com.fhlxc.filecontentsearch.ui;
 
+import java.awt.Color;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -23,44 +24,49 @@ public class MainWindow extends JFrame {
 
     /*
      * 主界面相关的参数
-     * width: 界面的宽
-     * height: 界面的长
+     * wth: 界面的宽
+     * hght: 界面的长
      */
+    
     @Value("${main_window.width}")
-    private int width;
+    private int wth = 100;
     @Value("${main_window.height}")
-    private  int height;
+    private  int hght = 100;
+    
     
     /*
      * w: 屏幕的宽
      * h: 屏幕的高
      */
-    private static int w = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-    private static int h = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+    private static int screenWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+    private static int screenHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
     
     private JPanel contenJPanel = new JPanel();
     
     public void setMainWindow() {
-        setBounds((w - width) / 2, (h - height) / 2, width, height);
-        setAlwaysOnTop(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds((screenWidth - wth) / 2, (screenHeight - hght) / 2, wth, hght);
+        setAlwaysOnTop(true);
+        setTitle("搜索");
+        
+        contenJPanel.setBackground(Color.red);
         setContentPane(contenJPanel);
     }
 
-    public int getWidth() {
-        return width;
+    public int getWth() {
+        return wth;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
+    public void setWth(int wth) {
+        this.wth = wth;
     }
 
-    public int getHeight() {
-        return height;
+    public int getHght() {
+        return hght;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setHght(int hght) {
+        this.hght = hght;
     }
-    
+
 }
