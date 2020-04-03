@@ -23,7 +23,9 @@
 hs_err_pid*
 
 # ignore prohect files
-.settings
+#.settings
 *.classpath
 *.project
 target/
+.*
+!/.gitignore
